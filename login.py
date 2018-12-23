@@ -22,6 +22,13 @@ headers_base = {
 	#X-Requested-With:XMLHttpRequest
 	}
 
+def login():
+
+	session = requests.session()
+	baseurl = 'http://a.nuist.edu.cn/index.php/index/login'
+	content = session.post(baseurl, headers = headers_base, data = login_data)
+	print (content.text.decode('unicode-escape'))
+
 def check():
 	rtn = requests.get('http://a.nuist.edu.cn/index.php/index/login')
 	info = "\u670d\u52a1\u5931\u6548\uff0c\u8bf7\u68c0\u67e5\u8d26\u6237\u53ca\u5230\u671f\u72b6\u6001"
